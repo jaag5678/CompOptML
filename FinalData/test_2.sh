@@ -2,13 +2,14 @@
 for main in */; do
 	cd $main
 	for folder in */; do
-		echo $folder 
+		#echo $folder 
 		cd $folder	
+		rm stat.txt
 		for file in *; do
 			if [ -x ${file} ]
 			then
 				avg=0
-				for ((i = 1; i < 100; i++)); do
+				for ((i = 1; i < $1; i++)); do
 					ts1=$(date +%s%N)
 					./$file < input.txt >/dev/null
 					ts2=$(date +%s%N)
