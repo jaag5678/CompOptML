@@ -1,0 +1,16 @@
+O0
+Mean = 0.006619
+Variance = 0.000098
+Standard Deviation = 0.009886
+01
+Mean = 0.006486
+Variance = 0.000094
+Standard Deviation = 0.009715
+O2
+Mean = 0.006564
+Variance = 0.000096
+Standard Deviation = 0.009788
+O3
+Mean = 0.006760
+Variance = 0.000095
+Standard Deviation = 0.009761

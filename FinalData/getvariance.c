@@ -9,7 +9,7 @@ void stats(FILE *fd) {
     char c;
     fscanf(fd, "%c", &c);
     fscanf(fd, "%c", &c);
-    printf("%c \n", c);
+    //printf("%c \n", c);
     for(int i = 0; i < 100; i++) {
         fscanf(fd, "%Lf", &a[i]);
         a[i] /= 1000000000;
@@ -42,9 +42,17 @@ int main(int argc, char *argv[]) {
     FILE *fd = fopen(argv[1], "r");
 
     //For each line rake the first 2 char then find the variance for the rest
+    char x;
+    printf("O0\n");
     stats(fd);
+    fscanf(fd, "%c", &x);
+    printf("01\n");
     stats(fd);
+    fscanf(fd, "%c",&x);
+    printf("O2\n");
     stats(fd);
+    fscanf(fd, "%c", &x);
+    printf("O3\n");
     stats(fd);
 
     fclose(fd);
