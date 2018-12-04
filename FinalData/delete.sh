@@ -4,6 +4,7 @@ for main in */; do
     for folder in */; do
         cd $folder
         rm stat.txt
+        rm iter_rest.txt
         rm o0
         rm o1
         rm o2
