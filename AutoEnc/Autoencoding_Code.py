@@ -175,7 +175,7 @@ autoencoder.summary()
 #NOW WE NEED TO SET ALL OUR DATA INTO FLOAT TYPE AND NORMALIZE
 train = training_stuff.astype('float32')/255
 
-
+print(train)
 # In[513]:
 
 
@@ -186,7 +186,7 @@ training_stuff.astype(int)
 
 
 #NOW FINAL PHASE IS TO TRAIN OUR AUTOENCODER
-autoencoder.fit(train, train, epochs = 100, shuffle = False, validation_data = (train, train))
+autoencoder.fit(train, train, epochs = 200, shuffle = False, validation_data = (train, train))
 
 
 # In[548]:
@@ -205,6 +205,7 @@ for i in range(a[0]):
     a = np.transpose([a])
     a = a.T
     enc = encoder.predict(a)
+    print(enc)
     for j in range (len(enc[0])):
         output_file.write(str(enc[0][j]))
         output_file.write(' ')

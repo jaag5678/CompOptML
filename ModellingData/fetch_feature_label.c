@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
         printf("%d ", fscanf(fd2, "%d", &label));
         read = getline(&ptr, &len, fd1);
         ptr[read - 1] = '\0';
-        for(int i = 0; i < read; i++) 
-            printf("%c", ptr[i]);
-        printf("%zu\n", len);
+        //for(int i = 0; i < read; i++) 
+          //  printf("%c", ptr[i]);
+        //printf("%zu\n", len);
         fprintf(fd3 ,"%s%d\n", ptr, label);
         //printf("%s %d\n", name, label);
     }
