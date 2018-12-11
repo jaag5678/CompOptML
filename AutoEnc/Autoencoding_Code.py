@@ -133,7 +133,7 @@ input_text = Input(shape=a)
 
 #THE ENCODING DIMENSION IS WHAT WE WANT TO KEEP AT THIS STAGE
 #SINCE OUR MAX SIZE IS AROUND 3700, I THINK 500 SHOULD AT LEAST BE MY ENCODING DIMENTION
-encoding_dim = 100
+encoding_dim = 1000
 
 
 # In[508]:
@@ -159,7 +159,7 @@ decoder = Model(encoded_input, decoder_layer(encoded_input))
 
 
 #NOW LETS FINALLY MERGE AND COMPILE OUR AUTOENCODER ITSELF
-autoencoder.compile(optimizer='adadelta', loss='binary_crossentropy')
+autoencoder.compile(optimizer='adagrad', loss='mean_squared_error', metrics = ['accuracy'])
 
 
 # In[511]:
@@ -186,7 +186,7 @@ training_stuff.astype(int)
 
 
 #NOW FINAL PHASE IS TO TRAIN OUR AUTOENCODER
-autoencoder.fit(train, train, epochs = 200, shuffle = False, validation_data = (train, train))
+autoencoder.fit(train, train, epochs = 100, shuffle = True, validation_split = 0.2)
 
 
 # In[548]:
@@ -205,7 +205,7 @@ for i in range(a[0]):
     a = np.transpose([a])
     a = a.T
     enc = encoder.predict(a)
-    print(enc)
+    #print(enc)
     for j in range (len(enc[0])):
         output_file.write(str(enc[0][j]))
         output_file.write(' ')
