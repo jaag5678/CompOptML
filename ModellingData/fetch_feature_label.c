@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
     while(1) {
         if(fscanf(fd2, "%s", name) == EOF)
             break;
-        printf("%d ", fscanf(fd2, "%d", &label));
+        fscanf(fd2, "%d", &label);
         read = getline(&ptr, &len, fd1);
         ptr[read - 1] = '\0';
         //for(int i = 0; i < read; i++) 
